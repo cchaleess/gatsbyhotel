@@ -43,19 +43,17 @@ const ImagenHotel = () => {
         }
       }
     `);
-    console.log(image.sharp.fluid);
+    //console.log(image.sharp.fluid);
 
     return ( 
-        <ImageBackground
-            tag="section"
-            fluid={image.sharp.fluid}
-            fadeIn="soft"
-            >
-            <TextoImagen>
+        
+        <ImageBackground tag="section" fluid={image.sharp.fluid} fadeIn="soft" >
+             <TextoImagen>
                 <h1>Bienvenido a Hotel Gatsby</h1>
                 <p>El mejor hotel para tus vacaciones</p>
-            </TextoImagen>            
+            </TextoImagen>   
         </ImageBackground>
+                    
      );
 }
  

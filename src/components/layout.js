@@ -2,8 +2,14 @@ import React from 'react'
 import Header from './header';
 import {Global, css} from '@emotion/react';
 import { Helmet } from 'react-helmet';
+import Footer from './footer';
+import useSeo from '../hooks/use-seo';
 
 const Layout = (props) => {
+
+    const seo = useSeo();
+    const title = seo.siteName;
+    const description = seo.fallbackSeo.description;
     return (
         <>
         <Global
@@ -40,12 +46,14 @@ const Layout = (props) => {
         />
 
             <Helmet>
-                <title>Gatsby Hotel</title>
+                <title>{title}</title>
+                <meta name="description" content={description}/>
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />        
             </Helmet>
         <Header/>
         {props.children}
+        <Footer title = {title}/>
        </>
         );
 }

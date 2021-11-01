@@ -1,11 +1,11 @@
 import * as React from "react"
 import Layout from "../components/layout"
+import ContenidoNosotros from "../components/contenidonosotros"
 
 const IndexPage = () => (
 
     <Layout>
-         <h1>Nosotros desde 'pages'</h1>
+         <ContenidoNosotros />
     </Layout>
 )
-
 export default IndexPage
